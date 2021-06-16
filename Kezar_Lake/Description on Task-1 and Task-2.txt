@@ -1,0 +1,33 @@
+A description on how Task-1 and Task-2 are done.
+
+Some major steps are written
+
+Data pre-processing:
+1. import dataset and separate into 3 sheets CHILA TEMPERATURE and TOTAL P
+2. Change name of depth to lowercase on Temperature sheet
+3. put np.nan to both depths and targeted items on missing months (Not selecting specific depth level.)
+4. Get mean of both depths and items (Chla, Temperature, Total p) on each month. 
+(Later, Set depths to 0 after realized it's not useful)
+
+Mean imputation:
+1. set date by using pandas datetime function
+2. pass it into getValue and getDepth functions (though Depth would not be used in future)
+3. In getValue function, we get median of value on closest months ( if month is May or Oct, use 2 predates or 2 postdatess)
+4. impute differently on different months
+5. same processes with Temperature and Total P
+6. save into excel file
+
+KNN imputation
+1. transform the input data into a right border
+2. it automatically imputes the number 
+3. save into excel file
+
+Correlation
+1. import 5 methods libraries
+2. when inputing x for each method, input columns of three targeted items
+3. extract results of 'correlation of temperature to CHILA' and ' correlation of Total P to Chila'
+4. sort results by ranking
+5. save into excel file
+
+
+#Details are written in Code comments
